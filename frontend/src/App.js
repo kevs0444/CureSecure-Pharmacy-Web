@@ -21,7 +21,6 @@ function App() {
         <Route path="/inventory" element={<Inventory />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/admin" element={<Admin />} />
-        {/* Add other routes here */}
       </Routes>
     </Router>
   );

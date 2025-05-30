@@ -1,18 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .login-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #fff; /* pure white background */
+  background: #fff;
   font-family: 'Poppins', sans-serif;
 }
 
 .login-container {
   display: flex;
   width: 900px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   background-color: #f7f9fc;
 }
@@ -24,7 +30,6 @@
   justify-content: center;
   align-items: center;
   border-radius: 12px;
-  /* no background color here, just white */
 }
 
 .login-logo {
@@ -32,24 +37,30 @@
   mix-blend-mode: multiply;
 }
 
-/* Right side is a clean white card */
 .login-right {
   flex: 1;
   margin: 20px;
   border-radius: 12px;
-  padding: 40px 40px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 0 0 0 0 transparent; /* no extra shadow or bg */
+  background: #f7f9fc;
 }
 
 .login-right h2 {
-  margin-bottom: 40px; /* increased from 30px */
+  margin-bottom: 40px;
   color: #00796b;
   font-weight: 600;
   font-size: 2rem;
   text-align: center;
+}
+
+.login-subtitle {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 30px;
 }
 
 .login-right input,
@@ -61,7 +72,6 @@
   font-size: 1rem;
   outline: none;
   transition: border-color 0.3s ease;
-  box-sizing: border-box; /* important */
 }
 
 .login-right input {
@@ -78,35 +88,34 @@
   box-shadow: 0 0 12px rgba(0, 77, 64, 0.7);
 }
 
+/* Password Wrapper Styling - unified with registration */
+
 .password-wrapper {
   position: relative;
+  margin-bottom: 20px;  /* Match registration */
   width: 100%;
-  margin-bottom: 30px;
 }
 
 .password-input {
   width: 100%;
-  padding: 14px 45px 14px 14px; /* right padding for eye */
-  border: 1.5px solid #00796b;
+  padding: 16px;
+  padding-right: 40px; /* Reserve space for eye icon */
   border-radius: 8px;
+  border: 1.5px solid #00796b;
   font-size: 1rem;
   outline: none;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.password-input:hover {
-  border-color: #00bfa5;
-  box-shadow: 0 0 8px rgba(0, 191, 165, 0.5);
-}
-
+.password-input:hover,
 .password-input:focus {
   border-color: #004d40;
-  box-shadow: 0 0 12px rgba(0, 77, 64, 0.7);
+  box-shadow: 0 0 12px rgba(0, 77, 64, 0.3);
 }
 
 .password-toggle-btn {
   position: absolute;
-  top: 35%;
+  top: 50%;
   right: 12px;
   transform: translateY(-50%);
   border: none;
@@ -120,12 +129,11 @@
   outline: none;
 }
 
-/* Add hover scale effect for subtle interaction */
 .password-toggle-btn:hover {
   transform: translateY(-50%) scale(1.1);
 }
 
-/* SVG icon animation for fade and rotate */
+/* Optional: you can add show/hide icon animations if you want */
 .password-toggle-btn svg {
   transition: opacity 0.3s ease, transform 0.3s ease;
   transform-origin: center;
@@ -142,13 +150,14 @@
 }
 
 .login-btn {
-  border: 1.5px solid transparent; /* same border width but transparent */
+  border: 1.5px solid transparent;
   background: linear-gradient(135deg, #00796b, #00bfa5);
   color: white;
   font-weight: 700;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 12px rgba(0, 191, 165, 0.4);
+  border-radius: 8px;
 }
 
 .login-btn:hover {
@@ -166,7 +175,7 @@
   text-align: center;
   font-size: 0.9rem;
   color: #00796b;
-  margin-top: 20px; /* add some top margin to separate it from button */
+  margin-top: 20px;
 }
 
 .register-text a {
@@ -177,4 +186,36 @@
 
 .register-text a:hover {
   text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    width: 100%;
+    margin: 20px;
+  }
+
+  .login-left,
+  .login-right {
+    margin: 10px 0;
+    padding: 30px 20px;
+  }
+
+  .login-logo {
+    max-width: 70%;
+  }
+
+  .login-right h2 {
+    font-size: 1.6rem;
+    margin-bottom: 30px;
+  }
+
+  .login-btn {
+    font-size: 1rem;
+  }
+
+  .register-text {
+    font-size: 0.85rem;
+  }
 }
