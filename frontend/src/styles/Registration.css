@@ -1,0 +1,83 @@
+/* Basic resets and full height */
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  background-color: #ffffff; /* pure white background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.registration-wrapper {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+.registration-container {
+  background-color: #f7f9fc; /* subtle off-white */
+  border-radius: 16px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+  padding: 40px 35px;
+  text-align: center;
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 20px;
+  mix-blend-mode: multiply;
+}
+
+h2 {
+  margin-bottom: 25px;
+  color: #2a6f97; /* blue shade */
+}
+
+.registration-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1.8px solid #a3c4bc; /* soft green */
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.registration-form input:focus {
+  border-color: #54b49f; /* bright green */
+}
+
+.registration-form button {
+  width: 100%;
+  padding: 15px 0;
+  background: #00b894;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.3s ease
+}
+
+.registration-form button:hover {
+   background: #019875;
+}
+
+.login-link {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.login-link a {
+  color: #2a6f97;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

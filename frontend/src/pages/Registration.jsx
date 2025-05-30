@@ -1,49 +1,26 @@
-import React, { useState } from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import '../styles/Registration.css';
 
-function Registration() {
-  const [formData, setFormData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    role: "staff", // default role, or dropdown to select
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // TODO: Add logic to send registration data to backend API
-    console.log("Registration data submitted:", formData);
-  };
-
+const Registration = () => {
   return (
-    <div style={{ maxWidth: "400px", margin: "auto", padding: "20px" }}>
-      <h2>Create Account</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Username:</label>
-        <input type="text" name="username" value={formData.username} onChange={handleChange} required />
-
-        <label>Email:</label>
-        <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-
-        <label>Password:</label>
-        <input type="password" name="password" value={formData.password} onChange={handleChange} required />
-
-        <label>Role:</label>
-        <select name="role" value={formData.role} onChange={handleChange}>
-          <option value="staff">Staff</option>
-          <option value="manager">Manager</option>
-          <option value="admin">Admin</option>
-        </select>
-
-        <button type="submit" style={{ marginTop: "10px", width: "100%" }}>
-          Register
-        </button>
-      </form>
+    <div className="registration-wrapper">
+      <div className="registration-container">
+        <img src={process.env.PUBLIC_URL + '/assets/logo.png'} alt="CureSecure Pharmacy Logo" className="logo" />
+        <h2>Create an Account</h2>
+        <form className="registration-form">
+          <input type="text" placeholder="Full Name" required />
+          <input type="email" placeholder="Email Address" required />
+          <input type="password" placeholder="Password" required />
+          <input type="password" placeholder="Confirm Password" required />
+          <button type="submit">Register</button>
+        </form>
+        <p className="login-link">
+          Already have an account? <Link to="/login">Login now</Link>
+        </p>
+      </div>
     </div>
   );
-}
+};
 
 export default Registration;
